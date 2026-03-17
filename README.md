@@ -24,6 +24,9 @@ Aftermarket head unit brackets are typically designed to accept two single DIN u
 The integrated ball protrudes from the front face and interfaces directly with the Offroam magnetic mount system, providing a solid, rattle-free mounting point positioned naturally within the driver's sightline.
 
 ![Render](images/render.png)
+![Render](images/arm.png)
+![Render](images/base.png)
+
 
 ---
 
@@ -98,13 +101,12 @@ Designed in **Fusion 360**. The model consists of three main features:
 |---------|-------|
 | **Material** | PETG-CF |
 | **Nozzle** | Hardened steel, 0.4mm |
-| **Layer Height** | 0.2mm |
+| **Layer Height** | 0.12mm |
 | **Wall Count** | 4+ (for rigidity around ball neck) |
-| **Infill** | 40% Gyroid |
-| **Print Temp** | 240–250°C (material dependent) |
-| **Bed Temp** | 70–80°C |
-| **Cooling** | Minimal (20% or less — improves layer adhesion in CF blends) |
-| **Orientation** | Face-down (keeps visible surface smooth, puts layer lines perpendicular to ball load) |
+| **Infill** | 40% Cubic |
+| **Print Temp** | 265°C (material dependent) |
+| **Bed Temp** | 65°C |
+| **Cooling** | 100% |
 
 > Printing face-down eliminates support on the visible panel surface. The ball neck will require a small support structure depending on slicer settings — tree supports work well here.
 
@@ -135,8 +137,8 @@ PETG-CF tends to print slightly undersized in XY relative to the model due to CF
 
 | File | Description |
 |------|-------------|
-| `car_mount.f3d` | Fusion 360 source file (fully parametric) |
-| `car_mount.stl` | STL for slicing |
+| `Car Phone Mount Gap Fill V3.3.f3d` | Fusion 360 source file (fully parametric) |
+| `Car Phone Mount Gap Fill V3.3.3mf` | STL for slicing |
 | `images/render.png` | Fusion 360 render |
 
 > The Fusion 360 source file includes named parameters for rail width, rail depth, and ball diameter so the part can be adapted to different bracket dimensions without reworking the geometry from scratch.
