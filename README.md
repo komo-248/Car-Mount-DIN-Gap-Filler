@@ -24,8 +24,7 @@ Aftermarket head unit brackets are typically designed to accept two single DIN u
 The integrated ball protrudes from the front face and interfaces directly with the Offroam magnetic mount system, providing a solid, rattle-free mounting point positioned naturally within the driver's sightline.
 
 ![Render](images/render.png)
-![Render](images/arm.png)
-![Render](images/base.png)
+
 
 
 ---
@@ -49,6 +48,9 @@ The integrated ball protrudes from the front face and interfaces directly with t
 | **Head Unit** | Single DIN installed in upper slot |
 | **Phone Mount** | Offroam magnetic ball mount system |
 | **Fasteners** | None — friction fit into DIN bracket rails |
+
+![Render](images/arm.png)
+![Render](images/base.png)
 
 > This part is designed for a specific vehicle and bracket combination. DIN opening dimensions and rail depth may vary between vehicles and bracket brands. Verify your opening dimensions before printing — see [Tolerancing & Fit Notes](#tolerancing--fit-notes).
 
