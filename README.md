@@ -83,14 +83,14 @@ The carbon fiber fill increases stiffness and reduces creep under sustained load
 Designed in **Fusion 360**. The model consists of three main features:
 
 **1. Body Panel**
-- Dimensioned to the standard single DIN slot width and height (180mm × 50mm face)
+- Dimensioned to the standard single DIN slot width and height
 - Depth sized to sit flush with surrounding trim
 - Front face chamfered to blend with the head unit bezel profile
 - Rear flanges extend to engage the DIN bracket rail channels
 
 **2. Ball Mount**
 - Ball geometry modeled to Offroam mount specification
-- Neck positioned at the lower-right of the face to keep the phone within sightline without blocking HVAC controls
+- Neck positioned at the lower-right of the face to keep the phone within sightline without blocking HVAC or stereo controls
 - Neck angle optimized so the phone sits at a natural viewing angle when attached
 
 **3. Rear Engagement Features**
