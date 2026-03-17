@@ -131,10 +131,6 @@ The part relies on interference fit between the rear flanges and the DIN bracket
 
 The Offroam system uses a standard ball diameter. The ball was modeled to spec and printed as a solid feature. PETG-CF shrinkage is low but measurable — validate the printed ball diameter with calipers before attempting to seat the mount head. A slight oversize (0.1–0.2mm) is intentional to account for print shrinkage and ensure a firm, rattle-free connection.
 
-**General PETG-CF Dimensional Notes:**
-
-PETG-CF tends to print slightly undersized in XY relative to the model due to CF fiber packing. If your slicer has an XY size compensation setting, a value of +0.1 to +0.2mm may improve dimensional accuracy on mating surfaces.
-
 ---
 
 ## Files
