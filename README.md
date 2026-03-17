@@ -49,8 +49,10 @@ The integrated ball protrudes from the front face and interfaces directly with t
 | **Phone Mount** | Offroam magnetic ball mount system |
 | **Fasteners** | None — friction fit into DIN bracket rails |
 
-![Render](images/arm.png)
-![Render](images/base.png)
+<p align="center">
+  <img src="images/arm.png" width="400"/>
+  <img src="images/base.png" width="400"/>
+</p>
 
 > This part is designed for a specific vehicle and bracket combination. DIN opening dimensions and rail depth may vary between vehicles and bracket brands. Verify your opening dimensions before printing — see [Tolerancing & Fit Notes](#tolerancing--fit-notes).
 
