@@ -33,7 +33,7 @@ The integrated ball protrudes from the front face and interfaces directly with t
  
 <p align="center">
   <img src="images/image1.png" width="475"/>
-  <img src="images/image2.png" width="270"/>
+  <img src="images/image3.png" width="270"/>
 </p>
  
 ---
