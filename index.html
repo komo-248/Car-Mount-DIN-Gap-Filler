@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Mount – DIN Gap Filler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f7f6f3; --surface: #ffffff; --border: #e4e2dc;
+      --text: #1a1917; --muted: #7a7870; --accent: #2a5caa;
+      --accent-soft: #eef2fa; --tag-bg: #eeece8;
+      --mono: 'DM Mono', monospace; --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+    header { padding: 56px 0 48px; border-bottom: 1px solid var(--border); opacity: 0; animation: fadeUp 0.6s ease forwards; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
+    .hero-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    h1 { font-family: var(--mono); font-size: clamp(22px, 4vw, 34px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
+    .hero-desc { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 620px; line-height: 1.65; margin-bottom: 24px; }
+    .hero-links { display: flex; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; padding: 7px 14px; border-radius: 3px; border: 1px solid var(--border); color: var(--muted); transition: all 0.15s; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { background: #1e4a8a; }
+    .btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; }
+    .section { padding: 48px 0; border-bottom: 1px solid var(--border); opacity: 0; animation: fadeUp 0.5s ease forwards; }
+    .section:last-of-type { border-bottom: none; }
+    .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .spec-table th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--bg); }
+    .spec-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .spec-table tr:last-child td { border-bottom: none; }
+    .spec-table td:first-child { font-weight: 500; min-width: 140px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .gallery-item { background: var(--surface); overflow: hidden; aspect-ratio: 4/3; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .gallery-item:hover img { transform: scale(1.03); }
+    .gallery-item.hero { grid-column: span 3; aspect-ratio: 16/7; }
+    .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.10s; }
+    footer { padding: 28px 0; border-top: 1px solid var(--border); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-inner span, .footer-inner a { font-family: var(--mono); font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
+    .footer-inner a:hover { color: var(--accent); }
+    @media (max-width: 600px) { .container { padding: 0 20px; } .gallery { grid-template-columns: 1fr; } .gallery-item.wide { grid-column: span 1; aspect-ratio: 4/3; } }
+  
+    /* SHOWCASE */
+    .showcase-item { cursor: pointer; border: 1px solid var(--border); transition: border-color 0.2s; display: flex; align-items: center; justify-content: center; background: var(--surface); overflow: hidden; padding: 12px; }
+    .showcase-item:hover { border-color: var(--accent); }
+    .showcase-item img { width: 100%; height: auto; display: block; }
+    .showcase-hint { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; margin-top: 10px; }
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .lightbox-close { position: fixed; top: 20px; right: 24px; font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.6); cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase; background: none; border: none; padding: 8px; transition: color 0.15s; }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 28px; padding: 16px; transition: color 0.15s; }
+    .lightbox-nav:hover { color: #fff; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+    .lightbox-counter { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
+
+  </style>
+</head>
+<body>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">ESC / Close</button>
+  <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8592;</button>
+  <img id="lb-img" src="" alt=""/>
+  <button class="lightbox-nav lightbox-next" id="lb-next">&#8594;</button>
+  <div class="lightbox-counter" id="lb-counter"></div>
+</div>
+
+<div class="container">
+
+  <header>
+    <a class="back-link" href="https://komo-248.github.io/komo.github.io">
+      <svg viewBox="0 0 24 24" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      Portfolio
+    </a>
+    <div class="hero-label">Hardware & Fabrication</div>
+    <h1>Car Mount — Double DIN Gap Filler</h1>
+    <p class="hero-desc">A PETG-CF press-fit panel that fills the unused lower DIN slot of an aftermarket double DIN bracket, with an integrated Offroam magnetic ball mount. Designed in Fusion 360 with fully parametric rail width, depth, and ball diameter. Material selected for dashboard thermal resistance; tolerances tuned for interference fit without fasteners.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="https://github.com/komo-248/Car-Mount-DIN-Gap-Filler/tree/main" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- SPECS -->
+  <section class="section">
+    <div class="section-label">Specs</div>
+    <table class="spec-table">
+      <thead><tr><th>Property</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Material</td><td>PETG-CF (Carbon Fiber reinforced) — heat deflection ~85–90°C</td></tr>
+        <tr><td>Nozzle</td><td>Hardened steel 0.4mm (required — CF is abrasive)</td></tr>
+        <tr><td>Layer Height</td><td>0.12mm</td></tr>
+        <tr><td>Infill</td><td>40% Cubic</td></tr>
+        <tr><td>Wall Count</td><td>4+ for rigidity around ball neck</td></tr>
+        <tr><td>Fit Type</td><td>Interference fit, 0.2–0.3mm per side — no fasteners</td></tr>
+        <tr><td>CAD Tool</td><td>Fusion 360 — fully parametric (rail width, depth, ball diameter)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+    <!-- GALLERY -->
+  <section class="section">
+    <div class="section-label">Gallery</div>
+    <div class="showcase-item" data-src="images/render.png" style="margin-bottom:12px;padding:16px;border:1px solid var(--border);">
+      <img src="images/render.png" alt="Fusion 360 render" style="width:100%;display:block;"/>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="showcase-item" data-src="images/image1.png" style="padding:8px;"><img src="images/image1.png" alt="Installed"/></div>
+      <div class="showcase-item" data-src="images/image3.png" style="padding:8px;"><img src="images/image3.png" alt="Installed view"/></div>
+      <div class="showcase-item" data-src="images/arm.png" style="padding:8px;"><img src="images/arm.png" alt="Ball arm"/></div>
+      <div class="showcase-item" data-src="images/base.png" style="padding:8px;"><img src="images/base.png" alt="Base"/></div>
+    </div>
+    <p class="showcase-hint">Click any image to view full size</p>
+  </section>
+
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span>komo-248 · Car Mount</span>
+      <a href="https://komo-248.github.io/komo.github.io">← Portfolio</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const items = Array.from(document.querySelectorAll('.showcase-item'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCounter = document.getElementById('lb-counter');
+  let current = 0;
+  function open(idx) {
+    current = idx;
+    lbImg.src = items[current].dataset.src;
+    lbCounter.textContent = (current + 1) + ' / ' + items.length;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function prev() { open((current - 1 + items.length) % items.length); }
+  function next() { open((current + 1) % items.length); }
+  items.forEach((el, i) => el.addEventListener('click', () => open(i)));
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.getElementById('lb-prev').addEventListener('click', prev);
+  document.getElementById('lb-next').addEventListener('click', next);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+</script>
+</body>
+</html>
